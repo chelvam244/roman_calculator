@@ -25,7 +25,9 @@ void main() {
 	int   operand2;
 	int   result;
 	
-	printf("Roman Calc\n");
+	printf("*****************Roman Calc*********************\n");
+	printf("Enter Arithmetic expression similar to the one shown below:\n");
+	printf("(Roman_Numeral_operand1 +/- Roman_Numeral_Operand2):\n");
 	//scanf("%s", str_calc);
 	
 	// Skip the initial white spaces or tabs
@@ -47,7 +49,7 @@ void main() {
 		}
 	}
 	str_operand1[incr] = '\0';		// End of reading first operand
-	printf("str-operand 1: %s\n", str_operand1);
+	//printf("str-operand 1: %s\n", str_operand1);
 	
 	if(c == '\n') {
 		printf("Arithmetic Operators and Second Operand were not entered\n");
@@ -60,19 +62,19 @@ void main() {
 		while((c = getchar()) == ' ' || c == '\t')
 			;		// Skip white space or tab
 		
-		if(c == '+' || c == '-') {
-			chr_arith = c;
-		} else {
-			printf("Invalid arithmetic operator entered\n");
-			return;
+	if(c == '+' || c == '-') {
+		chr_arith = c;
+	} else {
+		printf("Invalid arithmetic operator entered\n");
+		return;
 	}
-	printf("Arithmetic operation: %c\n", chr_arith);
+	//printf("Arithmetic operation: %c\n", chr_arith);
 	
 	incr = 0;  // Initialize the array count for second operand string
 	while((c = getchar()) == ' ' || c == '\t')
 	;		// Skip white space or tab
 	
-	if(c == '\n') {
+	if((c == '\n') || (c == '+') || (c ==  '-')) {
 		printf("No valid roman numeral operand 2 entered\n");
 		return;
 	}else
@@ -87,7 +89,7 @@ void main() {
 		}
 	}
 	str_operand2[incr] = '\0';		// End of reading second operand
-	printf("str-operand2: %s\n",str_operand2);
+	//printf("str-operand2: %s\n",str_operand2);
 	
 	if(c != '\n') {
 		while((c = getchar()) == ' ' || c == '\t')
